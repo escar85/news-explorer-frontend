@@ -1,0 +1,90 @@
+.about {
+  max-width: 1230px;
+  margin: 80px 104px;
+  display: flex;
+}
+
+.about__foto {
+  min-width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about__description-area {
+  margin-left: 56px;
+  max-width: 600px;
+}
+
+.about__title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 400;
+  margin-top: 50px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #1A1B22;
+}
+
+.about__text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-top: 24px;
+  color: #1A1B22;
+}
+
+@media (min-width: 1440px) {
+  .about {
+    margin: 80px auto;
+  }
+}
+
+@media (max-width: 950px) {
+  .about {
+    margin: 61px 40px;
+  }
+
+  .about__foto {
+    min-width: 232px;
+    height: 232px;
+  }
+
+  .about__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0;
+  }
+
+  .about__text {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 730px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 40px 80px;
+  }
+
+  .about__foto {
+    width: 272px;
+    height: 272px;
+  }
+
+  .about__description-area {
+    margin-left: 0;
+  }
+
+  .about__title {
+    margin-top: 24px;
+  }
+
+  .about__text {
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,162 @@
+.newsCard {
+  position: relative;
+  min-width: 224px;
+  border-radius: 16px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.newsCard__image {
+  width: 400px;
+  height: 272px;
+  object-fit: fill;
+}
+
+.newsCard__info {
+  margin: 20px 24px 24px;
+  justify-content: space-between;
+  max-width: 352px;
+}
+
+.newsCard__title {
+  font-family: 'Roboto Slab', sans-serif;
+  line-height: 30px;
+  font-size: 26px;
+  font-weight: normal;
+  color: #1A1B22;
+  margin: 12px auto 16px;
+  max-width: 352px;
+}
+
+.newsCard__date {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #B6BCBF;
+  margin: 0;
+}
+
+.newsCard__text {
+  font-family: 'Roboto', sans-serif;
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #1A1B22;
+  max-width: 352px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+  margin: 0 0 18px;
+}
+
+.newsCard__source {
+  font-family: 'Roboto Slab', sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #B6BCBF;
+}
+
+.newsCard__save-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: url('../../images/pointer.svg'), pointer;
+  background-color: white;
+  background-image: url('../../images/bookmark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  outline: none;
+}
+
+.newsCard__save-button:hover {
+  background-image: url('../../images/bookmark_hover.svg');
+}
+
+.newsCard__save-button-tooltip:hover::after {
+  content: 'Войдите, чтобы сохранять статьи';
+  position: absolute;
+  top: 0;
+  right: 45px;
+  padding: 14px 10px;
+  width: max-content;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  outline: none;
+}
+
+.newsCard__delete-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: url('../../images/pointer.svg'), pointer;
+  background-color: white;
+  background-image: url('../../images/trash.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.newsCard__delete-button:hover {
+  transition: all 0.5s linear;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.newsCard__delete-button:hover::after {
+  content: 'Убрать из сохранённых';
+  position: absolute;
+  top: 0;
+  right: 45px;
+  width: max-content;
+  padding: 13px 10px;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsCard__keyword {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  height: 40px;
+  padding: 0 10px 0;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

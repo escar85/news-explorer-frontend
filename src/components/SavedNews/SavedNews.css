@@ -1,0 +1,21 @@
+.savedNews {
+  background-color: #F5F6F7;
+  max-width: 1440px;
+  min-height: 288px;
+  margin: auto;
+  padding: 80px 0 80px;
+}
+
+.savedNews__articles {
+  list-style: none;
+  max-width: 1232px;
+  margin: 64px auto 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  padding: 0;
+  justify-content: space-around;
+}

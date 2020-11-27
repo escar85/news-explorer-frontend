@@ -1,13 +1,18 @@
 {
   "name": "news-explorer-frontend",
   "version": "0.1.0",
+  "description": "Project news-explorer on React framework",
+  "author": "Dmitry Melnik",
   "private": true,
+  "homepage": "/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.5",
     "@testing-library/react": "^11.1.1",
     "@testing-library/user-event": "^12.2.0",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "web-vitals": "^0.2.4"
   },
@@ -15,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "npm run build && scp -r ./build/* escar1985@84.201.176.192:/home/escar1985/frontend"
   },
   "eslintConfig": {
     "extends": [
