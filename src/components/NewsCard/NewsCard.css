@@ -64,7 +64,7 @@
   color: #B6BCBF;
 }
 
-.newsCard__save-button {
+.newsCard__save-button, .newsCard__delete-button {
   position: absolute;
   top: 24px;
   right: 24px;
@@ -72,83 +72,27 @@
   height: 40px;
   border: none;
   border-radius: 8px;
-  cursor: url('../../images/pointer.svg'), pointer;
   background-color: white;
-  background-image: url('../../images/bookmark.svg');
   background-repeat: no-repeat;
   background-position: center;
   outline: none;
+  cursor: url('../../images/pointer.svg'), pointer;
+}
+
+.newsCard__save-button {
+  background-image: url('../../images/bookmark.svg');
 }
 
 .newsCard__save-button:hover {
   background-image: url('../../images/bookmark_hover.svg');
 }
 
-.newsCard__save-button-tooltip:hover::after {
-  content: 'Войдите, чтобы сохранять статьи';
-  position: absolute;
-  top: 0;
-  right: 45px;
-  padding: 14px 10px;
-  width: max-content;
-  z-index: 1;
-  font-family: 'Roboto', sans-serif;
-  font-size: 10px;
-  line-height: 12px;
-  font-weight: 500;
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  outline: none;
-}
-
 .newsCard__delete-button {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 8px;
-  cursor: url('../../images/pointer.svg'), pointer;
-  background-color: white;
   background-image: url('../../images/trash.svg');
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
-.newsCard__delete-button:hover {
-  transition: all 0.5s linear;
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.newsCard__delete-button:hover::after {
-  content: 'Убрать из сохранённых';
+.newsCard__save-button-tooltip:hover::after, .newsCard__delete-button:hover::after, .newsCard__keyword {
   position: absolute;
-  top: 0;
-  right: 45px;
-  width: max-content;
-  padding: 13px 10px;
-  z-index: 1;
-  font-family: 'Roboto', sans-serif;
-  font-size: 12px;
-  line-height: 14px;
-  font-weight: 500;
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.newsCard__keyword {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  height: 40px;
-  padding: 0 10px 0;
   z-index: 1;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -158,5 +102,81 @@
   background-color: white;
   display: flex;
   align-items: center;
+}
+
+.newsCard__save-button-tooltip:hover::after, .newsCard__delete-button:hover::after {
+  top: 0;
+  right: 45px;
+  width: max-content;
+  padding: 13px 10px;
+  outline: none;
+}
+
+.newsCard__save-button-tooltip:hover::after {
+  content: 'Войдите, чтобы сохранять статьи';
+}
+
+.newsCard__delete-button:hover::after {
+  content: 'Убрать из сохранённых';
+}
+
+.newsCard__keyword {
+  top: 24px;
+  left: 24px;
+  height: 40px;
+  padding: 0 10px 0;
   justify-content: center;
+}
+
+.newsCard__delete-button:hover {
+  transition: all 0.5s linear;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .newsCard__image {
+    width: 224px;
+    height: 150px;
+  }
+  .newsCard__info {
+    margin: 16px;
+    max-width: 192px;
+  }
+  .newsCard__title {
+    line-height: 24px;
+    font-size: 22px;
+  }
+  .newsCard__keyword {
+    top: 8px;
+    left: 8px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .newsCard__save-button, .newsCard__delete-button {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .newsCard__image {
+    width: 288px;
+    height: 196px;
+  }
+  .newsCard__info {
+    max-width: 256px;
+  }
+  .newsCard__title {
+    line-height: 28px;
+    font-size: 22px;
+  }
+  .newsCard__keyword {
+    top: 16px;
+    left: 16px;
+  }
+  .newsCard__save-button, .newsCard__delete-button {
+    top: 16px;
+    right: 16px;
+  }
 }

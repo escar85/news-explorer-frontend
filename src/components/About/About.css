@@ -47,18 +47,15 @@
   .about {
     margin: 61px 40px;
   }
-
   .about__foto {
     min-width: 232px;
     height: 232px;
   }
-
   .about__title {
     font-size: 30px;
     line-height: 40px;
     margin-top: 0;
   }
-
   .about__text {
     margin-top: 24px;
   }
@@ -70,20 +67,16 @@
     align-items: center;
     margin: 32px 40px 80px;
   }
-
   .about__foto {
     width: 272px;
     height: 272px;
   }
-
   .about__description-area {
     margin-left: 0;
   }
-
   .about__title {
     margin-top: 24px;
   }
-
   .about__text {
     margin-top: 16px;
   }

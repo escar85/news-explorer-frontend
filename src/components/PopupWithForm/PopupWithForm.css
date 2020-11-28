@@ -39,7 +39,7 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 500;
-  background:#2F71E5;
+  background: #2F71E5;
   color: #fff;
   width: 360px;
   height: 64px;
@@ -53,12 +53,12 @@
 }
 
 .popup__submit-button:hover {
-  background:#347EFF;
+  background: #347EFF;
   transition: all 1s linear;
 }
 
 .popup__submit-button:active {
-  background:#2A65CC;
+  background: #2A65CC;
   transition: all 1s linear;
 }
 
@@ -100,32 +100,23 @@
 }
 
 @media (max-width: 570px) {
-  .popup__close-button {
-    width: 20px;
-    height: 20px;
-    top: -20px;
-    right: -20px;
-  }
-}
-
-@media (max-width: 570px) {
-  .popup__title {
-    font-size: 18px;
-    line-height: 22px;
-    margin: 17px 9px 0;
-  }
-}
-
-@media (max-width: 570px) {
-  .popup__submit-button {
-    width: 222px;
-    margin: 16px 9px 17px;
-  }
-}
-
-
-@media (max-width: 570px) {
   .popup__container {
-    width: 240px;
+    width: 100vw;
+    height: 100%;
+    top: 56px;
+  }
+  .popup__close-button {
+    width: 24px;
+    height: 24px;
+    top: -40px;
+    right: 16px;
+  }
+  .popup__title {
+    margin: 16px 17px 22px;
+  }
+  .popup__submit-button {
+    width: 288px;
+    margin-top: 23px;
+    margin-left: calc((100% - 288px) / 2);
   }
 }

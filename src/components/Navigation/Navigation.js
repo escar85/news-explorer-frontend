@@ -36,11 +36,11 @@ function Navigation(props) {
       {props.loggedIn ?
         <>
           <NavLink to='/saved-news' className={navLinkClassName} activeClassName={navLinkActiveClassName}>Сохранённые статьи</NavLink>
-          <button className={navButtonClassName} onClick={props.logout}>Greta
+          <button type="button" aria-label="link" className={navButtonClassName} onClick={props.logout}>Greta
             <div className={navLogoutIconClassName} />
           </button>
         </> :
-        <button className={navButtonClassName} onClick={props.redirectTo}>Авторизоваться</button>
+        <button type="button" aria-label="link" className={navButtonClassName} onClick={props.redirectTo}>Авторизоваться</button>
       }
     </nav>
   );
