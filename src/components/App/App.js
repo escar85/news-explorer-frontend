@@ -74,6 +74,7 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Main />
+          {/* NotFound & Preloader потом убрать. Сейчас только для проверки */}
           <NotFound />
           <Preloader />
           <About />
