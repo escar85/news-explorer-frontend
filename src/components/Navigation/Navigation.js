@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function Navigation(props) {
 
   const url = useLocation();
+  const currentUser = React.useContext(CurrentUserContext);
 
   const navLinkClassName = (
     `navigation__link ${url.pathname === '/'
@@ -36,7 +38,7 @@ function Navigation(props) {
       {props.loggedIn ?
         <>
           <NavLink to='/saved-news' className={navLinkClassName} activeClassName={navLinkActiveClassName}>Сохранённые статьи</NavLink>
-          <button type="button" aria-label="link" className={navButtonClassName} onClick={props.logout}>Greta
+          <button type="button" aria-label="link" className={navButtonClassName} onClick={props.onSignOut}>{currentUser.name}
             <div className={navLogoutIconClassName} />
           </button>
         </> :

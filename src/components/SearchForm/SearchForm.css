@@ -10,7 +10,11 @@
   border-radius: 100px;
 }
 
-.search-form__input {
+.search-form__input:active, .search-form__input:focus, .search-form__submit-button, .search-form__input_error {
+  outline: none;
+}
+
+.search-form__input, .search-form__input_error {
   width: calc(100% - 168px);
   border-radius: 100px;
   border: unset;
@@ -23,8 +27,8 @@
   caret-color: #2F71E5;
 }
 
-.search-form__input:active, .search-form__input:focus, .search-form__submit-button {
-  outline: none;
+.search-form__input_error::placeholder {
+  color: red;
 }
 
 .search-form__submit-button {
