@@ -16,6 +16,9 @@
   margin: 20px 24px 24px;
   justify-content: space-between;
   max-width: 352px;
+  cursor: url('../../images/pointer.svg'), pointer;
+  text-decoration: none;
+  color: #1A1B22;
 }
 
 .newsCard__title {
@@ -87,6 +90,10 @@
   background-image: url('../../images/bookmark_hover.svg');
 }
 
+.newsCard__save-button_checked {
+  background-image: url('../../images/bookmark_marked.svg');
+}
+
 .newsCard__delete-button {
   background-image: url('../../images/trash.svg');
 }
@@ -110,6 +117,7 @@
   width: max-content;
   padding: 13px 10px;
   outline: none;
+  z-index: 2;
 }
 
 .newsCard__save-button-tooltip:hover::after {
@@ -131,7 +139,7 @@
 .newsCard__delete-button:hover {
   transition: all 0.5s linear;
   opacity: 0.6;
-  cursor: pointer;
+  cursor: url('../../images/pointer.svg'), pointer;
 }
 
 @media (max-width: 950px) {
@@ -156,6 +164,14 @@
   .newsCard__save-button, .newsCard__delete-button {
     top: 8px;
     right: 8px;
+  }
+  .newsCard__save-button-tooltip:hover::after, .newsCard__delete-button:hover::after {
+    top: 0;
+    right: 45px;
+    width: max-content;
+    padding: 13px 5px;
+    outline: none;
+    font-size: 10px;
   }
 }
 

@@ -15,7 +15,7 @@ function PopupInput(props) {
     placeholder={props.placeholder}
     onChange={props.onChange}
   />
-  <span className="popup__input_type_error" id="inputName-error"></span>
+  <span className="popup__input_type_error" id="inputName-error">{props.errorText}</span>
   </>
   );
 };

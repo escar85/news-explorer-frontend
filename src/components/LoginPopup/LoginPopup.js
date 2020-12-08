@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PopupWithFrom from '../PopupWithForm/PopupWithForm';
 import PopupInput from '../PopupInput/PopupInput';
+import { useFormWithValidation } from '../../utils/Validation';
 
 function LoginPopup(props) {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
-
-  function handlePasswordChange(e) {
-    setPassword(e.target.value);
-  }
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
+    props.onLogin({
+      password: values.password,
+      email: values.email
+    })
   }
 
   return (
@@ -26,6 +22,7 @@ function LoginPopup(props) {
       submitButtonName='Войти'
       redirectButtonName='Зарегистрироваться'
       isOpen={props.isOpen}
+      isValid={isValid}
       onClose={props.onClose}
       onSubmit={handleSubmit}
       redirectTo={props.redirectTo}
@@ -37,17 +34,19 @@ function LoginPopup(props) {
         maxLength='30'
         id='inputEmailLogin'
         placeholder='Введите почту'
-        onChange={handleEmailChange}
+        onChange={handleChange}
+        errorText={errors.email}
         label='Email'
       />
 
       <PopupInput
         name='password'
-        minLength='7'
+        minLength='8'
         maxLength='30'
         id='inputPasswordLogin'
         placeholder='Введите пароль'
-        onChange={handlePasswordChange}
+        onChange={handleChange}
+        errorText={errors.password}
         label='Пароль'
       />
 

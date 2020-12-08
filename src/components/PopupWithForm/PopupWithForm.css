@@ -62,7 +62,7 @@
   transition: all 1s linear;
 }
 
-.popup__submit-button_status_disabled {
+.popup__submit-button_disabled {
   background: #E6E8EB;
   color: #B6BCBF;
 }

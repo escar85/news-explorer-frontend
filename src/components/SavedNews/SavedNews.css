@@ -20,6 +20,16 @@
   justify-content: space-around;
 }
 
+.savedNews__noArticles {
+  font-family: 'Roboto', sans-serif;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 32px auto 0;
+  display: block;
+  width: fit-content;
+}
+
 @media (max-width: 950px) {
   .savedNews {
     padding: 32px 0;

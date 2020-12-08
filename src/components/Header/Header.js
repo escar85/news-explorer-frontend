@@ -47,6 +47,7 @@ function Header(props) {
           loggedIn={props.loggedIn}
           logout={props.logout}
           redirectTo={props.redirectTo}
+          onSignOut={props.onSignOut}
         />
       </div>
     </header>

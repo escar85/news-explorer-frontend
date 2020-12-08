@@ -1,27 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PopupWithFrom from '../PopupWithForm/PopupWithForm';
 import PopupInput from '../PopupInput/PopupInput';
+import { useFormWithValidation } from '../../utils/Validation';
 
 function RegisterPopup(props) {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-
-  function handleEmailChange(e) {
-    setEmail(e.target.value);
-  }
-
-  function handleNameChange(e) {
-    setName(e.target.value);
-  }
-
-  function handlePasswordChange(e) {
-    setPassword(e.target.value);
-  }
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    props.onRegister({
+      password: values.password,
+      email: values.email,
+      name: values.name
+    })
   }
 
   return (
@@ -32,6 +25,7 @@ function RegisterPopup(props) {
       redirectButtonName='Войти'
       isOpen={props.isOpen}
       onClose={props.onClose}
+      isValid={isValid}
       onSubmit={handleSubmit}
       redirectTo={props.redirectTo}
     >
@@ -42,17 +36,19 @@ function RegisterPopup(props) {
         maxLength='30'
         id='inputEmail'
         placeholder='Введите почту'
-        onChange={handleEmailChange}
+        onChange={handleChange}
+        errorText={errors.email}
         label='Email'
       />
 
       <PopupInput
         name='password'
-        minLength='7'
+        minLength='8'
         maxLength='30'
         id='inputPassword'
         placeholder='Введите пароль'
-        onChange={handlePasswordChange}
+        onChange={handleChange}
+        errorText={errors.password}
         label='Пароль'
       />
 
@@ -62,7 +58,8 @@ function RegisterPopup(props) {
         maxLength='30'
         id='inputName'
         placeholder='Введите своё имя'
-        onChange={handleNameChange}
+        onChange={handleChange}
+        errorText={errors.name}
         label='Имя'
       />
 
