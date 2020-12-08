@@ -10,7 +10,7 @@ function NewsCardList(props) {
   const [renderedArticles, setRenderedArticles] = React.useState(props.articles.slice(0, 3))
 
   function showMore() {
-    let arr = props.articles.slice(index, index + 3);
+    const arr = props.articles.slice(index, index + 3);
     setIndex(index + 3);
     setRenderedArticles([...renderedArticles, ...arr]);
   }

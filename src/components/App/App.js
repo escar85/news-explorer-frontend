@@ -76,7 +76,6 @@ function App() {
   }
 
   function getArticles(keyword) {
-    setIsLoading(true)
     newsApi.getArticles(keyword)
       .then((res) => {
         res.totalResults === 0
@@ -216,6 +215,7 @@ function App() {
             <Main
               onSearch={getArticles}
               setWord={setSearchWord}
+              isLoading={setIsLoading}
             />
             {isNotFound ? <NotFound /> : <></>}
             {isLoading ? <Preloader /> : <></>}

@@ -13,6 +13,7 @@ function SearchForm(props) {
       setPlaceholder('Нужно ввести ключевое слово')
       setInputClassName('search-form__input_error')
     } else {
+      props.isLoading(true)
       setPlaceholder('OK')
       props.onSearch(values.searchInput)
       props.setWord(values.searchInput)

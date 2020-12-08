@@ -11,6 +11,7 @@ function Main(props) {
         <SearchForm
           onSearch={props.onSearch}
           setWord={props.setWord}
+          isLoading={props.isLoading}
         />
       </div>
     </main>
